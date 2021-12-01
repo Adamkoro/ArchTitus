@@ -47,6 +47,7 @@ PKGS=(
     'remmina'
     'openvpn'
     'flameshot'
+    'base'
 )
 
 for PKG in "${PKGS[@]}"; do
