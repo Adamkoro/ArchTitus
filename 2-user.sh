@@ -29,7 +29,6 @@ PKGS=(
     'noto-fonts-emoji'
     'papirus-icon-theme'
     'lightly-git'
-    'lightlyshaders-git'
     'plasma-pa'
     'ocs-url' # install packages from websites
     'snapper-gui-git'
