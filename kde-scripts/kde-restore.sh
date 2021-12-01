@@ -2,7 +2,7 @@
 
 name=kde
 export PATH=${PATH}:~/.local/bin
-cp -r ${PWD}/dotfiles/* ${HOME}/.config/
+cp -r ${PWD}/files/* ${HOME}/.config/
 pip install konsave
 konsave -i ${PWD}/${name}.knsv
 sleep 1
