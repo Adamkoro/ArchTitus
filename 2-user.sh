@@ -28,11 +28,8 @@ PKGS=(
     'nerd-fonts-fira-code'
     'noto-fonts-emoji'
     'papirus-icon-theme'
-    'nordic-darker-standard-buttons-theme'
-    'nordic-darker-theme'
-    'nordic-kde-git'
-    'nordic-theme'
-    'sddm-nordic-theme-git'
+    'lightly-git'
+    'lightlyshaders-git'
     'plasma-pa'
     'ocs-url' # install packages from websites
     'snapper-gui-git'
@@ -56,6 +53,12 @@ PKGS=(
 for PKG in "${PKGS[@]}"; do
     yay -S --noconfirm $PKG
 done
+
+cp -r ${PWD}/dotfiles/* ${HOME}/.config/
+pip install konsave
+konsave -i ${PWD}/${name}.knsv
+sleep 1
+konsave -a ${name}
 
 echo -e "\nDone!\n"
 echo "--------------------------------------"
