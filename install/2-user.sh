@@ -48,6 +48,8 @@ PKGS=(
     'openvpn'
     'flameshot'
     'base'
+    'libreoffice-still'
+    'libreoffice-still-hu'
 )
 
 for PKG in "${PKGS[@]}"; do
