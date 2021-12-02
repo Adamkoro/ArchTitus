@@ -2,10 +2,10 @@
 
 chsh -s /bin/bash
 
-if [ $(id -u) -eq 0 ];
-then
-    cp root-bashrc /root/.bashrc
+if [ $(id -u) -eq 0 ]; then
+    cp bashrc /root/.bashrc
+    cp bash_profile /root/.bash_profile
 else
-    cp user-bashrc /home/${USER}/.bashrc
+    cp bashrc /home/${USER}/.bashrc
 fi
-echo "Shell changed and installed successfully"
+echo "Shell setting installed and changed successfully"
