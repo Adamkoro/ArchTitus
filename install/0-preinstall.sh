@@ -67,7 +67,7 @@ case $formatdisk in
         
         # make filesystems and LVMs
         echo -e "\nCreating Filesystems...\n$HR"
-        ROOT=/dev/mapper/system-root
+        ROOT=/dev/mapper/system-vg0
         if [[ ${DISK} =~ "nvme" ]]; then
             mkfs.vfat -F32 -n "EFIBOOT" "${DISK}p2"
             pvcreate "${DISK}p3"
@@ -132,15 +132,15 @@ echo "--------------------------------------"
 echo "-- Creating SWAP file               --"
 echo "--------------------------------------"
 #Put swap into the actual system, not into RAM disk, otherwise there is no point in it, it'll cache RAM into RAM. So, /mnt/ everything.
-mkdir /mnt/opt/swap #make a dir that we can apply NOCOW to to make it btrfs-friendly.
+mkdir /swap #make a dir that we can apply NOCOW to to make it btrfs-friendly.
 #chattr +C /mnt/opt/swap #apply NOCOW, btrfs needs that.
-dd if=/dev/zero of=/mnt/opt/swap/swapfile bs=1M count=2048 status=progress
-chmod 600 /mnt/opt/swap/swapfile #set permissions.
-chown root /mnt/opt/swap/swapfile
-mkswap /mnt/opt/swap/swapfile
-swapon /mnt/opt/swap/swapfile
+dd if=/dev/zero of=/swap/swapfile bs=1M count=2048 status=progress
+chmod 600 /swap/swapfile #set permissions.
+chown root /swap/swapfile
+mkswap /swap/swapfile
+swapon /swap/swapfile
 #The line below is written to /mnt/ but doesn't contain /mnt/, since it's just / for the sysytem itself.
-echo "/opt/swap/swapfile	none	swap	sw	0	0" >> /mnt/etc/fstab #Add swap to fstab, so it KEEPS working after installation.
+echo "/swap/swapfile	none	swap	sw	0	0" >> /mnt/etc/fstab #Add swap to fstab, so it KEEPS working after installation.
 
 echo -e "\nDone!\n"
 echo "--------------------------------------"
