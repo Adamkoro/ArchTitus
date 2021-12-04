@@ -36,7 +36,7 @@ mkdir /mnt
 
 
 echo -e "\nInstalling prereqs...\n$HR"
-pacman -S --noconfirm gptfdisk btrfs-progs
+pacman -S --noconfirm gptfdisk #btrfs-progs
 
 echo "-------------------------------------------------"
 echo "-------select your disk to format----------------"
@@ -76,8 +76,8 @@ case $formatdisk in
             vgs
             lvcreate -L 64GB system -n root
             lvs
-            mkfs.btrfs -L "ROOT" ${ROOT} -f
-            mount -t btrfs ${ROOT} /mnt
+            mkfs.xfs -L "Root" ${ROOT} -f
+            mount -t xfs ${ROOT} /mnt
         else
             mkfs.vfat -F32 -n "EFIBOOT" "${DISK}2"
             pvcreate "${DISK}3"
@@ -86,12 +86,9 @@ case $formatdisk in
             vgs
             lvcreate -L 64GB system -n root
             lvs
-            mkfs.btrfs -L "ROOT" ${ROOT} -f
-            mount -t btrfs ${ROOT} /mnt
+            mkfs.xfs -L "Root" ${ROOT} -f
+            mount -t xfs ${ROOT} /mnt
         fi
-        ls /mnt | xargs btrfs subvolume delete
-        btrfs subvolume create /mnt/@
-        umount /mnt
     ;;
     *)
         echo "Rebooting in 3 Seconds ..." && sleep 1
@@ -102,7 +99,7 @@ case $formatdisk in
 esac
 
 # mount target
-mount -t btrfs -o subvol=@ -L ROOT /mnt
+mount -t xfs -L Root /mnt
 mkdir /mnt/boot
 mkdir /mnt/boot/efi
 mount -t vfat -L EFIBOOT /mnt/boot/
@@ -136,7 +133,7 @@ echo "-- Creating SWAP file               --"
 echo "--------------------------------------"
 #Put swap into the actual system, not into RAM disk, otherwise there is no point in it, it'll cache RAM into RAM. So, /mnt/ everything.
 mkdir /mnt/opt/swap #make a dir that we can apply NOCOW to to make it btrfs-friendly.
-chattr +C /mnt/opt/swap #apply NOCOW, btrfs needs that.
+#chattr +C /mnt/opt/swap #apply NOCOW, btrfs needs that.
 dd if=/dev/zero of=/mnt/opt/swap/swapfile bs=1M count=2048 status=progress
 chmod 600 /mnt/opt/swap/swapfile #set permissions.
 chown root /mnt/opt/swap/swapfile
