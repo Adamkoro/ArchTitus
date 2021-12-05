@@ -79,7 +79,7 @@ case $formatdisk in
             pvs
             vgcreate system-vg0 "${DISK}p3"
             vgs
-            lvcreate -L "${LVM_SIZE}GB" system -n root
+            lvcreate -L ${LVM_SIZE}GB system -n root
             lvs
             mkfs.xfs -L "Root" ${ROOT} -f
             mount -t xfs ${ROOT} /mnt
@@ -89,7 +89,7 @@ case $formatdisk in
             pvs
             vgcreate system-vg0 "${DISK}3"
             vgs
-            lvcreate -L "${LVM_SIZE}GB" system -n root
+            lvcreate -L ${LVM_SIZE}GB system -n root
             lvs
             mkfs.xfs -L "Root" ${ROOT} -f
             mount -t xfs ${ROOT} /mnt
