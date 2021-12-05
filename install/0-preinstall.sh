@@ -137,13 +137,13 @@ echo "--------------------------------------"
 echo "-- Creating SWAP file               --"
 echo "--------------------------------------"
 #Put swap into the actual system, not into RAM disk, otherwise there is no point in it, it'll cache RAM into RAM. So, /mnt/ everything.
-mkdir /swap #make a dir that we can apply NOCOW to to make it btrfs-friendly.
-#chattr +C /mnt/opt/swap #apply NOCOW, btrfs needs that.
-dd if=/dev/zero of=/swap/swapfile bs=1M count=2048 status=progress
-chmod 600 /swap/swapfile #set permissions.
-chown root /swap/swapfile
-mkswap /swap/swapfile
-swapon /swap/swapfile
+mkdir /mnt/swap #make a dir that we can apply NOCOW to to make it btrfs-friendly.
+#chattr +C /mnt/opt/mnt/swap #apply NOCOW, btrfs needs that.
+dd if=/dev/zero of=/mnt/swap/swapfile bs=1M count=2048 status=progress
+chmod 600 /mnt/swap/swapfile #set permissions.
+chown root /mnt/swap/swapfile
+mkswap /mnt/swap/swapfile
+swapon /mnt/swap/swapfile
 #The line below is written to /mnt/ but doesn't contain /mnt/, since it's just / for the sysytem itself.
 echo "/swap/swapfile	none	swap	sw	0	0" >> /mnt/etc/fstab #Add swap to fstab, so it KEEPS working after installation.
 
