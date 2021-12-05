@@ -60,7 +60,9 @@ for PKG in "${PKGS[@]}"; do
     yay -S --noconfirm $PKG
 done
 
-cp -r ${PWD}/dotfiles/* ${HOME}/.config/
+name=kde
+export PATH=${PATH}:~/.local/bin
+cp -r ${PWD}/files/* ${HOME}/.config/
 pip install konsave
 konsave -i ${PWD}/${name}.knsv
 sleep 1
