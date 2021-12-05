@@ -50,6 +50,9 @@ PKGS=(
     'base'
     'libreoffice-still'
     'libreoffice-still-hu'
+    'transmission-qt'
+    'git-completion'
+    'teams'
 )
 
 for PKG in "${PKGS[@]}"; do

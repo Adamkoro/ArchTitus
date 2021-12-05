@@ -39,6 +39,10 @@ echo -e "\nInstalling prereqs...\n$HR"
 pacman -S --noconfirm gptfdisk #btrfs-progs
 
 echo "-------------------------------------------------"
+echo "-------your keymap is set to HU------------------"
+echo "-------------------------------------------------"
+
+echo "-------------------------------------------------"
 echo "-------select your disk to format----------------"
 echo "-------------------------------------------------"
 lsblk
