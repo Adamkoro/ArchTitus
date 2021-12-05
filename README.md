@@ -1,10 +1,17 @@
 # ArchTitus Installer Script
 
+## Based on ArchTitus, changed for my personal preferences
+
+Main differnce is I prefer to use lvm. Root is on lvm with xfs filesystem.
+Added Plymputh for see a better boot screen.
+Lot of other packages that I'm using.
+
 <img src="https://i.imgur.com/YiNMnan.png" />
 
 This README contains the steps I do to install and configure a fully-functional Arch Linux installation containing a desktop environment, all the support packages (network, bluetooth, audio, printers, etc.), along with all my preferred applications and utilities. The shell scripts in this repo allow the entire process to be automated.)
 
 ---
+
 ## Create Arch ISO or Use Image
 
 Download ArchISO from <https://archlinux.org/download/> and put on a USB drive with [Etcher](https://www.balena.io/etcher/), [Ventoy](https://www.ventoy.net/en/index.html), or [Rufus](https://rufus.ie/en/)
@@ -23,11 +30,12 @@ cd ArchTitus
 ```
 
 ### System Description
-This is completely automated arch install of the KDE desktop environment on arch using all the packages I use on a daily basis. 
+
+This is completely automated arch install of the KDE desktop environment on arch using all the packages I use on a daily basis.
 
 ## Troubleshooting
 
-__[Arch Linux Installation Guide](https://github.com/rickellis/Arch-Linux-Install-Guide)__
+**[Arch Linux Installation Guide](https://github.com/rickellis/Arch-Linux-Install-Guide)**
 
 ### No Wifi
 
@@ -39,7 +47,7 @@ __[Arch Linux Installation Guide](https://github.com/rickellis/Arch-Linux-Instal
 
 #4: Run `station [device name] get-networks`
 
-#5: Find your network, and run `station [device name] connect [network name]`, enter your password and run `exit`. You can test if you have internet connection by running `ping google.com`. 
+#5: Find your network, and run `station [device name] connect [network name]`, enter your password and run `exit`. You can test if you have internet connection by running `ping google.com`.
 
 ## Credits
 
