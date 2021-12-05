@@ -77,7 +77,7 @@ case $formatdisk in
             mkfs.vfat -F32 -n "EFIBOOT" "${DISK}p2"
             pvcreate "${DISK}p3"
             pvs
-            vgcreate system "${DISK}p3"
+            vgcreate system-vg0 "${DISK}p3"
             vgs
             lvcreate -L "${LVM_SIZE}GB" system -n root
             lvs
@@ -87,7 +87,7 @@ case $formatdisk in
             mkfs.vfat -F32 -n "EFIBOOT" "${DISK}2"
             pvcreate "${DISK}3"
             pvs
-            vgcreate system "${DISK}3"
+            vgcreate system-vg0 "${DISK}3"
             vgs
             lvcreate -L "${LVM_SIZE}GB" system -n root
             lvs
