@@ -3,8 +3,8 @@
 chsh -s /bin/bash
 
 if [ $(id -u) -eq 0 ]; then
-    cp -a bash/* /root/
+    cp -r bash/.* /root/
 else
-    cp -a bash/* /home/${USER}/.bashrc
+    cp -r bash/.* /home/${USER}/
 fi
 echo "Shell setting installed and changed successfully"
