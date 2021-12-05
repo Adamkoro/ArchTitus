@@ -1,6 +1,6 @@
 # ArchTitus Installer Script
 
-## Based on ArchTitus, changed for my personal preferences
+## Based on ArchTitus, changed for my personal preferencies
 
 Main differnce is I prefer to use lvm. Root is on lvm with xfs filesystem. Added Plymputh for see a better boot screen. Lot of other packages that I'm using. Of course KDE backup contains my preferencies and settings.
 Added "bashrc-install.sh" that contains my bash settings.
