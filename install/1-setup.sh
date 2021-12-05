@@ -61,7 +61,7 @@ PKGS=(
     'xorg-drivers'
     'xorg-xkill'
     'xorg-xinit'
-    'xterm'
+    #'xterm'
     'plasma-desktop' # KDE Load second
     'alsa-plugins' # audio plugins
     'alsa-utils' # audio utils

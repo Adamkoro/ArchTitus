@@ -53,6 +53,7 @@ PKGS=(
     'transmission-qt'
     'git-completion'
     'teams'
+    'kwalletmanager'
 )
 
 for PKG in "${PKGS[@]}"; do
