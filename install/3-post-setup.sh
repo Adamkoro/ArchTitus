@@ -20,12 +20,14 @@ grub-mkconfig -o /boot/grub/grub.cfg
 # ------------------------------------------------------------------------
 
 echo -e "\nEnabling Login Display Manager"
-systemctl enable sddm.service
-#echo -e "\nSetup SDDM Theme"
-#cat <<EOF > /etc/sddm.conf
-#[Theme]
-#Current=Nordic
-#EOF
+systemctl enable sddm-plymouth.service
+echo -e "\nSetup Plymouth theme"
+cat <<EOF > /etc/plymouth/plymouth.conf
+[Daemon]
+Theme=bgrt
+ShowDelay=5
+DeviceTimeout=8
+EOF
 
 # ------------------------------------------------------------------------
 
@@ -46,7 +48,7 @@ echo "
 ###############################################################################
 "
 mkinitcpio_file=/etc/mkinitcpio.conf
-sed -i "s/HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)$/HOOKS=(base udev autodetect modconf block lvm2 filesystems keyboard fsck)/" $mkinitcpio_file
+sed -i "s/HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)$/HOOKS=(base udev plymouth autodetect modconf block lvm2 filesystems keyboard fsck)/" $mkinitcpio_file
 
 mkinitcpio -p linux
 

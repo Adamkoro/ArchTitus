@@ -54,6 +54,8 @@ PKGS=(
     'git-completion'
     'teams'
     'kwalletmanager'
+    'plymouth'
+    'gdm-plymouth'
 )
 
 for PKG in "${PKGS[@]}"; do
