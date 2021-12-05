@@ -45,8 +45,9 @@ PKGS=(
     'update-grub'
     'megasync'
     'remmina'
+    'freerdp' #for Remmina rdp connections
     'openvpn'
-    'flameshot'
+    'flameshot' #screenshot maker tool
     'base'
     'libreoffice-still'
     'libreoffice-still-hu'
@@ -54,8 +55,8 @@ PKGS=(
     'git-completion'
     'teams'
     'kwalletmanager'
-    'plymouth'
-    'gdm-plymouth'
+    'plymouth' # For add a better boot screen
+    'gdm-plymouth' # Plymouth needed
 )
 
 for PKG in "${PKGS[@]}"; do
