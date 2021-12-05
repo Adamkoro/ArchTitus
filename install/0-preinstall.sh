@@ -71,6 +71,7 @@ case $formatdisk in
         
         # make filesystems and LVMs
         echo -e "\nCreating Filesystems...\n$HR"
+        LVM_SIZE=32
         ROOT=/dev/mapper/system-vg0
         if [[ ${DISK} =~ "nvme" ]]; then
             mkfs.vfat -F32 -n "EFIBOOT" "${DISK}p2"
@@ -78,7 +79,7 @@ case $formatdisk in
             pvs
             vgcreate system "${DISK}p3"
             vgs
-            lvcreate -L 64GB system -n root
+            lvcreate -L ${LVM_SIZE}GB system -n root
             lvs
             mkfs.xfs -L "Root" ${ROOT} -f
             mount -t xfs ${ROOT} /mnt
@@ -88,7 +89,7 @@ case $formatdisk in
             pvs
             vgcreate system "${DISK}3"
             vgs
-            lvcreate -L 64GB system -n root
+            lvcreate -L ${LVM_SIZE}GB system -n root
             lvs
             mkfs.xfs -L "Root" ${ROOT} -f
             mount -t xfs ${ROOT} /mnt
