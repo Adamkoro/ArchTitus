@@ -22,7 +22,7 @@ PKGS=(
     'awesome-terminal-fonts'
     'brave-bin' # Brave Browser
     'dxvk-bin' # DXVK DirectX to Vulcan
-    'github-desktop-bin' # Github Desktop sync
+    #'github-desktop-bin' # Github Desktop sync
     'mangohud' # Gaming FPS Counter
     'mangohud-common'
     'nerd-fonts-fira-code'
