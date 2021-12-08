@@ -166,6 +166,10 @@ PKGS=(
     'pulseaudio'
     'pulseaudio-alsa'
     'pulseaudio-bluetooth'
+    'pulseeffects-legacy'
+    'rnnoise' # for remove noise
+    'lsp-plugins' # for equalizer
+    'calf' # for bass enchaner
     'python-notify2'
     'python-psutil'
     'python-pyqt5'
