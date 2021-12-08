@@ -115,7 +115,9 @@ PKGS=(
     'gwenview'
     'haveged'
     'htop'
-    'iptables-nft'
+    'dnsmasq'
+    'ebtables'
+    #'iptables-nft'
     'jdk-openjdk' # Java 17
     'kate'
     'kcodecs'
