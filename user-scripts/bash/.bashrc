@@ -18,6 +18,7 @@ fi
 
 export HISTSIZE=50000
 export HISTFILESIZE=50000
+export EDITOR=vim
 
 # Auto merge terimal historys after command
 HISTCONTROL=ignoredups:erasedups:ignorespace
@@ -29,6 +30,7 @@ export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 alias ls='ls --color=auto'
 alias l='ls -la --color=auto'
 alias ip='ip --color=auto'
+alias grep='grep --color'
 alias ..='cd ..;pwd'
 alias ...='cd ../..;pwd'
 alias ....='cd ../../..;pwd'
