@@ -57,6 +57,11 @@ PKGS=(
     'kwalletmanager'
     'plymouth' # For add a better boot screen
     'gdm-plymouth' # Plymouth needed
+    'obs-studio'
+    'google-chrome'
+    'obs-ndi-bin'
+    'v4l2loopback-dkms'
+    
 )
 
 for PKG in "${PKGS[@]}"; do
