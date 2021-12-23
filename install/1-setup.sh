@@ -230,7 +230,7 @@ esac
 
 # Graphics Drivers find and install
 if lspci | grep -E "NVIDIA|GeForce"; then
-    pacman -S nvidia --noconfirm --needed
+    pacman -S nvidia-dkms nvidia nvidia-utils vidia-settings lib32-nvidia-utils --noconfirm --needed
     nvidia-xconfig
     elif lspci | grep -E "Radeon"; then
     pacman -S xf86-video-amdgpu --noconfirm --needed

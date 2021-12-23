@@ -28,6 +28,10 @@ Theme=bgrt
 ShowDelay=5
 DeviceTimeout=8
 EOF
+cat <<EOF > /etc/vconsole.conf
+KEYMAP=hu
+FONT=ter-v14b
+EOF
 
 # ------------------------------------------------------------------------
 
