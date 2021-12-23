@@ -61,6 +61,7 @@ PKGS=(
     'google-chrome'
     'obs-ndi-bin'
     'v4l2loopback-dkms'
+    'konsave'
     
 )
 
@@ -72,7 +73,6 @@ name=kde
 export PATH=${PATH}:~/.local/bin
 cd ${HOME}/ArchTitus/kde-scripts
 cp -r ${PWD}/files/* ${HOME}/.config/
-pip install konsave
 konsave -i ${PWD}/${name}.knsv
 sleep 1
 konsave -a ${name}
