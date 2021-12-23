@@ -62,6 +62,10 @@ PKGS=(
     'obs-ndi-bin'
     'v4l2loopback-dkms'
     'konsave'
+    'spotify'
+    'caprine'
+    'pulseeffects-legacy'
+    'pulsemeeter-git'
     
 )
 
