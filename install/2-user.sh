@@ -70,6 +70,7 @@ done
 
 name=kde
 export PATH=${PATH}:~/.local/bin
+cd ${HOME}/ArchTitus/kde-scripts
 cp -r ${PWD}/files/* ${HOME}/.config/
 pip install konsave
 konsave -i ${PWD}/${name}.knsv
