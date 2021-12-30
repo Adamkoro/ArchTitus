@@ -82,9 +82,7 @@ PKGS=(
     'breeze-gtk'
     'bridge-utils'
     'btrfs-progs'
-    'vlc' # video players
     'cmatrix'
-    #'code' # Visual Studio code
     'cronie'
     'cups'
     'dialog'
@@ -117,7 +115,6 @@ PKGS=(
     'htop'
     'dnsmasq'
     'ebtables'
-    #'iptables-nft'
     'jdk-openjdk' # Java 17
     'kate'
     'kcodecs'
@@ -127,7 +124,6 @@ PKGS=(
     'kinfocenter'
     'kscreen'
     'kvantum-qt5'
-    'kitty'
     'konsole'
     'kscreen'
     'layer-shell-qt'
@@ -138,7 +134,6 @@ PKGS=(
     'linux-firmware'
     'linux-headers'
     'lsof'
-    'lutris'
     'lzop'
     'm4'
     'make'
@@ -166,9 +161,9 @@ PKGS=(
     'pulseaudio'
     'pulseaudio-alsa'
     'pulseaudio-bluetooth'
-    'rnnoise' # for remove noise
-    'lsp-plugins' # for equalizer
-    'calf' # for bass enchaner
+    #'rnnoise' # for remove noise
+    #'lsp-plugins' # for equalizer
+    #'calf' # for bass enchaner
     'python-notify2'
     'python-psutil'
     'python-pyqt5'
@@ -179,10 +174,8 @@ PKGS=(
     'sddm-kcm'
     'snapper'
     'spectacle'
-    'steam'
     'sudo'
     'swtpm'
-    'synergy'
     'systemsettings'
     'terminus-font'
     'traceroute'
@@ -195,9 +188,6 @@ PKGS=(
     'virt-viewer'
     'wget'
     'which'
-    'wine-gecko'
-    'wine-mono'
-    'winetricks'
     'xdg-desktop-portal-kde'
     'xdg-user-dirs'
     'zeroconf-ioslave'
