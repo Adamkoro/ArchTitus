@@ -64,9 +64,7 @@ PKGS=(
     'konsave'
     'spotify'
     'caprine'
-    'pulseeffects-legacy'
     'pulsemeeter-git'
-    
 )
 
 for PKG in "${PKGS[@]}"; do
